@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>GRANT SUCKS</title>
+  </head>
+  <body style="display: flex; align-items: center; justify-content: center;">
+    <button onclick="startFlashing()">Click me</button>
+    <script>
+      function startFlashing() {
+        setInterval(function() {
+          var currentColor = document.body.style.backgroundColor;
+          if (currentColor === 'brown') {
+            document.body.style.backgroundColor = 'pink';
+            document.body.innerHTML = '<span style="font-size: 48px; color: ' + getRainbowColor() + ';">GRANT EATS POOP</span>';
+          } else {
+            document.body.style.backgroundColor = 'brown';
+            document.body.innerHTML = '<span style="font-size: 48px; color: ' + getRainbowColor() + ';">GRANT EATS POOP</span>';
+          }
+        }, 1000);
+      }
+
+      var rainbowColors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+      var currentColorIndex = 0;
+      function getRainbowColor() {
+        if (currentColorIndex >= rainbowColors.length) {
+          currentColorIndex = 0;
+        }
+        return rainbowColors[currentColorIndex++];
+      }
+    </script>
+  </body>
+</html>
